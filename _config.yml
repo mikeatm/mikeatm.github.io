@@ -1,0 +1,51 @@
+# Site settings
+title: Dr. Michael O. Atambo
+email: michael.atambo@tukenya.ac.ke
+description: >-
+  High Performance Computing Expert | Materials Science Researcher | DevOps Specialist
+  Converting research questions into computational solutions.
+baseurl: "" # Leave empty for username.github.io
+url: "https://mikeatm.github.io" # Change to your actual URL
+
+# Author information
+author:
+  name: Dr. Michael O. Atambo
+  email: michael.atambo@tukenya.ac.ke
+  phone: "+254 721 865 739"
+  location: "Nairobi, Kenya"
+  motto: "tu ne cede malis sed contra audentior ito"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Dr. Michael O. Atambo"

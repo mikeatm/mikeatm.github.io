@@ -1,0 +1,526 @@
+---
+layout: default
+---
+
+<style>
+    .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 6rem 2rem;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        font-style: italic;
+        opacity: 0.9;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+    
+    .btn-primary {
+        background: var(--accent);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-secondary {
+        background: white;
+        color: var(--primary);
+    }
+    
+    .btn-secondary:hover {
+        background: var(--light);
+        transform: translateY(-2px);
+    }
+    
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--primary);
+        text-align: center;
+    }
+    
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .expertise-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+    
+    .expertise-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .expertise-card h3 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .research-areas {
+        background: var(--light);
+        padding: 3rem 2rem;
+    }
+    
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .service-item {
+        background: white;
+        padding: 1.5rem;
+        border-left: 4px solid var(--secondary);
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .service-item h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .hpc-systems {
+        background: white;
+    }
+    
+    .systems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .system-card {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 10px;
+        border-top: 4px solid var(--success);
+    }
+    
+    .system-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+    
+    .system-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .system-link:hover {
+        text-decoration: underline;
+    }
+    
+    .cv-section {
+        background: var(--light);
+    }
+    
+    .cv-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .cv-item {
+        margin-bottom: 2rem;
+    }
+    
+    .cv-item h3 {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .cv-item h4 {
+        color: var(--primary);
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    
+    .publications {
+        background: white;
+    }
+    
+    .pub-list {
+        list-style: none;
+        margin-top: 2rem;
+    }
+    
+    .pub-item {
+        background: var(--light);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border-left: 4px solid var(--accent);
+    }
+    
+    .eu-tenders {
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        color: white;
+        text-align: center;
+    }
+    
+    .eu-tenders h2 {
+        color: white;
+    }
+    
+    .contact {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+    }
+    
+    .contact h2 {
+        color: white;
+    }
+    
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-item a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .contact-item a:hover {
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .systems-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="hero">
+    <h1>{{ site.author.name }}</h1>
+    <p>High Performance Computing | Materials Science | DevOps Excellence</p>
+    <p class="hero-subtitle">"{{ site.author.motto }}"</p>
+    <div class="cta-buttons">
+        <a href="#services" class="btn btn-primary">Consulting Services</a>
+        <a href="{{ site.baseurl }}/blog.html" class="btn btn-secondary">Read Blog</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <a href="https://materials-modelling-group.github.io/" class="btn btn-secondary" target="_blank">Research Group</a>
+    </div>
+</div>
+
+<section id="expertise">
+    <h2>Areas of Expertise</h2>
+    <div class="expertise-grid">
+        <div class="expertise-card">
+            <h3>High Performance Computing</h3>
+            <p>Over 10 years of experience in HPC cluster design, setup, and management. Expert in GPU computing solutions, workload management with Slurm, and performance optimization.</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                <li>HPC Infrastructure Design</li>
+                <li>GPU Computing Solutions</li>
+                <li>Cluster Administration (Rocky Linux, OpenHPC)</li>
+                <li>Performance Monitoring & Optimization</li>
+            </ul>
+        </div>
+        
+        <div class="expertise-card">
+            <h3>Computational Materials Science</h3>
+            <p>PhD in electronic and optical properties of materials using Many-Body Perturbation Theory. Specialized in DFT, QMC, and MBPT techniques for materials discovery and characterization.</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                <li>Density Functional Theory (DFT)</li>
+                <li>Quantum Monte Carlo (QMC)</li>
+                <li>Many-Body Perturbation Theory</li>
+                <li>Materials Discovery & Design</li>
+            </ul>
+        </div>
+        
+        <div class="expertise-card">
+            <h3>High Throughput Computing</h3>
+            <p>Developer of AiiDA-YAMBO plugin for automated materials characterization. Expert in workflow automation and high-throughput computational frameworks.</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                <li>AiiDA Framework Development</li>
+                <li>Automated Workflows</li>
+                <li>Quantum ESPRESSO & YAMBO</li>
+                <li>Large-Scale Computations</li>
+            </ul>
+        </div>
+        
+        <div class="expertise-card">
+            <h3>DevOps & Cloud Computing</h3>
+            <p>Advanced skills in containerization, orchestration, and cloud infrastructure. Proficient in Kubernetes, modern web frameworks, and distributed systems.</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                <li>Kubernetes Orchestration</li>
+                <li>Container Technologies</li>
+                <li>CI/CD Pipelines</li>
+                <li>Python, JavaScript, C++, Go</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="research-areas">
+    <h2>Consulting Services</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Offering specialized consulting in high performance computing, research computing infrastructure, and computational science solutions for academic institutions, research centers, and industry.</p>
+    
+    <div class="services-list">
+        <div class="service-item">
+            <h4>HPC Cluster Design & Setup</h4>
+            <p>Complete turnkey solutions for HPC infrastructure, from hardware specification to software configuration and user training.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Research Computing Strategy</h4>
+            <p>Strategic planning for institutional research computing capabilities, capacity building, and resource optimization.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>GPU Computing Solutions</h4>
+            <p>Implementation of GPU-accelerated computing for AI, machine learning, and scientific computing applications.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Computational Workflows</h4>
+            <p>Development of automated computational workflows using AiiDA and other high-throughput computing frameworks.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Training & Capacity Building</h4>
+            <p>Workshops and training programs in HPC usage, parallel programming, and computational materials science.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Cloud & DevOps for Science</h4>
+            <p>Implementation of cloud infrastructure and DevOps practices for research computing environments.</p>
+        </div>
+    </div>
+</section>
+
+<section id="hpc-systems" class="hpc-systems">
+    <h2>HPC Systems & Documentation</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">Systems I've designed, deployed, and maintained for research computing in Kenya.</p>
+    
+    <div class="systems-grid">
+        <div class="system-card">
+            <h3>STAMPEDE HPC Cluster @ NACOSTI</h3>
+            <p>Designed and deployed a complete HPC cluster featuring:</p>
+            <ul style="margin: 1rem 0 1rem 1.5rem;">
+                <li>4 compute nodes (48 cores total)</li>
+                <li>38 TB centralized storage</li>
+                <li>Slurm workload manager with accounting</li>
+                <li>Real-time monitoring with Netdata and XDMoD</li>
+                <li>Rocky Linux 8.x with OpenHPC</li>
+                <li>Infiniband networking</li>
+            </ul>
+            <a href="https://stampede.nacosti.go.ke/dokuwiki/doku.php?id=start" class="system-link" target="_blank">View STAMPEDE Documentation →</a>
+        </div>
+        
+        <div class="system-card">
+            <h3>KENET GPU Cluster</h3>
+            <p>Research computing infrastructure enabling GPU-accelerated research across multiple disciplines:</p>
+            <ul style="margin: 1rem 0 1rem 1.5rem;">
+                <li>Materials discovery and simulation</li>
+                <li>Machine learning applications in textiles</li>
+                <li>Computational linguistics for heritage preservation</li>
+                <li>Health equity initiatives using AI</li>
+            </ul>
+            <a href="https://training.kenet.or.ke/index.php/HPC_Usage" class="system-link" target="_blank">View KENET GPU Documentation →</a>
+        </div>
+    </div>
+</section>
+
+<section id="cv" class="cv-section">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-content">
+        <div class="cv-item">
+            <h3>Current Positions</h3>
+            <h4>HPC Facilitator - Kenya Education Network Trust (2023 - Present)</h4>
+            <p>Leading research computing initiatives, GPU computing enablement, and building computational capacity across Kenyan institutions.</p>
+            
+            <h4>Lecturer - Technical University of Kenya (2019 - Present)</h4>
+            <p>Department of Technical and Applied Physics, teaching computational physics and materials science.</p>
+        </div>
+        
+        <div class="cv-item">
+            <h3>Education</h3>
+            <h4>PhD - University of Modena and Reggio Emilia, Italy (2015-2018)</h4>
+            <p><em>Electronic and Optical Properties of Doped TiO₂ by Many Body Perturbation Theory</em></p>
+            
+            <h4>MPhil - University of Eldoret, Kenya (2011-2013)</h4>
+            <p><em>Computational Material Science</em></p>
+            
+            <h4>BSc Physics - Moi University, Kenya (2007-2011)</h4>
+        </div>
+        
+        <div class="cv-item">
+            <h3>Key Experience Highlights</h3>
+            <h4>T.R.I.L Fellow - ICTP, Trieste, Italy (2014-2015)</h4>
+            <p>Advanced training in HPC techniques, parallel programming, and scientific computing. Gained expertise with TRILIOS, PLASMA libraries, and QE-GPU.</p>
+            
+            <h4>Research Student/HPC Facilitator - University of Eldoret (2011-2014)</h4>
+            <p>Maintained computing cluster for CMSG research group, trained researchers on HPC usage, and developed materials science research.</p>
+        </div>
+        
+        <div class="cv-item">
+            <h3>Technical Skills</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Programming:</strong> Python (expert), JavaScript (very proficient), C/C++ (proficient), Fortran, Go</li>
+                <li><strong>HPC:</strong> Slurm, OpenHPC, Rocky Linux, cluster management, GPU computing</li>
+                <li><strong>DevOps:</strong> Kubernetes, Docker, Tornado web framework, MongoDB, ArangoDB</li>
+                <li><strong>Scientific Computing:</strong> Quantum ESPRESSO, YAMBO, CASINO, AiiDA framework</li>
+            </ul>
+        </div>
+        
+        <div class="cv-item">
+            <h3>Initiatives</h3>
+            <h4>APhRICA Network (2024-Present)</h4>
+            <p>Advanced Physics tRaIning and Collaboration with Africa - An international initiative training young African scientists to contribute to continental development through advanced physics research.</p>
+        </div>
+    </div>
+</section>
+
+<section id="publications" class="publications">
+    <h2>Selected Publications</h2>
+    <ul class="pub-list">
+        <li class="pub-item">
+            <strong>Michael Atambo</strong>, Daniele Varsano, Andrea Ferretti, et al. (2019). "Electronic and Optical properties of doped TiO₂ by many-body perturbation theory." <em>Physical Review Materials 3</em>, 045401. <a href="http://arxiv.org/abs/1811.04280" style="color: var(--secondary);" target="_blank">arXiv:1811.04280</a>
+        </li>
+        
+        <li class="pub-item">
+            D. Sangalli, A. Ferretti, H. Miranda, et al. including <strong>M.O. Atambo</strong> (2019). "Many-body perturbation theory calculations using the yambo code." <em>Journal of Physics: Condensed Matter</em>. <a href="https://arxiv.org/abs/1902.03837" style="color: var(--secondary);" target="_blank">arXiv:1902.03837</a>
+        </li>
+        
+        <li class="pub-item">
+            Davide Campi et al. including <strong>M.O. Atambo</strong> (2016). "Development of the AiiDA plugins for the flagship codes." Deliverable D3.2 of the H2020 project MaX, EC grant agreement no: 676598, EPFL, Lausanne, Switzerland.
+        </li>
+        
+        <li class="pub-item">
+            <strong>Michael O Atambo</strong>, N W Makau, G O Amolo, and Ryo Maezono (2015). "QMC and phonon study of super-hard cubic boron carbon nitride." <em>Materials Research Express</em>, 2(10), 105902.
+        </li>
+    </ul>
+    
+    <p style="text-align: center; margin-top: 2rem;">
+        <a href="https://github.com/yambo-code/yambo-aiida" style="color: var(--secondary); font-weight: 600;" target="_blank">View yambo-aiida plugin on GitHub →</a>
+    </p>
+</section>
+
+<section class="eu-tenders">
+    <h2>EU Tenders & International Collaboration</h2>
+    <p style="max-width: 800px; margin: 0 auto 2rem;">I am available as an expert consultant for EU-funded projects in high performance computing, computational science, and research infrastructure development.</p>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; max-width: 800px; margin: 0 auto;">
+        <h3 style="margin-bottom: 1rem;">Expertise Areas for EU Projects:</h3>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>HPC Infrastructure Design & Implementation</li>
+            <li>Research Computing Strategy & Capacity Building</li>
+            <li>High-Throughput Computational Workflows</li>
+            <li>Materials Science & Computational Physics</li>
+            <li>GPU Computing & AI Infrastructure</li>
+            <li>DevOps for Scientific Computing</li>
+            <li>Training & Education in Computational Sciences</li>
+        </ul>
+    </div>
+    
+    <p style="margin-top: 2rem; font-size: 1.1rem;">Interested in collaboration? <a href="#contact" style="color: white; font-weight: 600; text-decoration: underline;">Get in touch</a></p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Get In Touch</h2>
+    <p style="margin-bottom: 2rem;">I'm available for consulting, collaboration, and speaking engagements.</p>
+    
+    <div class="contact-info">
+        <div class="contact-item">
+            <strong>Email (TU-K)</strong>
+            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        </div>
+        
+        <div class="contact-item">
+            <strong>Email (Personal)</strong>
+            <a href="mailto:matambo4999@gmail.com">matambo4999@gmail.com</a>
+        </div>
+        
+        <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:{{ site.author.phone }}">{{ site.author.phone }}</a>
+        </div>
+        
+        <div class="contact-item">
+            <strong>Research Group</strong>
+            <a href="https://materials-modelling-group.github.io/" target="_blank">Materials Modelling Group</a>
+        </div>
+        
+        <div class="contact-item">
+            <strong>GitHub</strong>
+            <a href="https://github.com/yambo-code/yambo-aiida" target="_blank">yambo-aiida plugin</a>
+        </div>
+    </div>
+    
+    <p style="margin-top: 2rem; font-style: italic;">Location: {{ site.author.location }}</p>
+</section>
