@@ -1,0 +1,15 @@
+* Main CSS for Jekyll Site - Keep this file empty or minimal */
+/* All styles are embedded in the layouts for simplicity */
+
+/* You can add custom overrides here if needed */
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #1a252f;
+    --success: #27ae60;
+}
+
+/* Any additional custom styles can go here */
