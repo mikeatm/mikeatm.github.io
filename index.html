@@ -6,6 +6,11 @@ layout: default
     .hero {
         background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 6rem 2rem;
         text-align: center;
     }
@@ -255,6 +260,11 @@ layout: default
     }
     
     @media (max-width: 768px) {
+        .hero {
+            min-height: auto;
+            padding: 4rem 2rem;
+        }
+        
         .hero h1 {
             font-size: 2rem;
         }
@@ -271,7 +281,7 @@ layout: default
     <p class="hero-subtitle">"{{ site.author.motto }}"</p>
     <div class="cta-buttons">
         <a href="#services" class="btn btn-primary">Consulting Services</a>
-        <a href="{{ site.baseurl }}/blog.html" class="btn btn-secondary">Read Blog</a>
+                    <a href="{{ site.baseurl }}/blog/" class="btn btn-secondary">Read Blog</a>
         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         <a href="https://materials-modelling-group.github.io/" class="btn btn-secondary" target="_blank">Research Group</a>
     </div>
@@ -472,8 +482,8 @@ layout: default
 </section>
 
 <section class="eu-tenders">
-    <h2>EU Projects & International Collaboration</h2>
-    <p style="max-width: 800px; margin: 0 auto 2rem;">I am available as an expert consultant for EU-funded projects in high performance computing, computational science, and research infrastructure development, material science, solid state physics and methodological development</p>
+    <h2>EU Tenders & International Collaboration</h2>
+    <p style="max-width: 800px; margin: 0 auto 2rem;">I am available as an expert consultant for EU-funded projects in high performance computing, computational science, and research infrastructure development.</p>
     
     <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; max-width: 800px; margin: 0 auto;">
         <h3 style="margin-bottom: 1rem;">Expertise Areas for EU Projects:</h3>
@@ -481,7 +491,7 @@ layout: default
             <li>HPC Infrastructure Design & Implementation</li>
             <li>Research Computing Strategy & Capacity Building</li>
             <li>High-Throughput Computational Workflows</li>
-            <li>Materials Science & Computational Physics & Solid State Physics</li>
+            <li>Materials Science & Computational Physics</li>
             <li>GPU Computing & AI Infrastructure</li>
             <li>DevOps for Scientific Computing</li>
             <li>Training & Education in Computational Sciences</li>
