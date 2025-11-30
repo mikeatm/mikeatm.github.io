@@ -5,31 +5,43 @@ description: Articles on HPC, computational science, materials modeling, and res
 ---
 
 <style>
+    body {
+        background: #fafafa;
+    }
+    
     .blog-hero {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        background: linear-gradient(135deg, #1e3a5f 0%, #2980b9 100%);
         color: white;
-        padding: 3rem 2rem 2.5rem;
+        padding: 4rem 2rem 3rem;
         text-align: center;
         position: relative;
+        clip-path: ellipse(100% 100% at 50% 0%);
+        margin-bottom: 4rem;
     }
     
     .blog-hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .blog-hero p {
-        font-size: 1rem;
-        opacity: 0.95;
-        max-width: 600px;
+        font-size: 1.15rem;
+        color: #ffffff;
+        max-width: 700px;
         margin: 0 auto;
+        font-weight: 400;
+        opacity: 0.98;
     }
     
     .blog-container {
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
+        margin: -2rem auto 0;
+        padding: 0 2rem 4rem;
+        position: relative;
+        z-index: 1;
     }
     
     .blog-grid {
@@ -41,17 +53,17 @@ description: Articles on HPC, computational science, materials modeling, and res
     
     .blog-card {
         background: white;
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         transition: transform 0.3s, box-shadow 0.3s;
         display: flex;
         flex-direction: column;
     }
     
     .blog-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
     
     .blog-card-content {
@@ -125,15 +137,21 @@ description: Articles on HPC, computational science, materials modeling, and res
     
     @media (max-width: 768px) {
         .blog-hero {
-            padding: 2rem 1.5rem 1.5rem;
+            padding: 3rem 1.5rem 2.5rem;
+            clip-path: ellipse(110% 100% at 50% 0%);
+            margin-bottom: 3rem;
         }
         
         .blog-hero h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .blog-hero p {
-            font-size: 0.9rem;
+            font-size: 1rem;
+        }
+        
+        .blog-container {
+            margin-top: -1.5rem;
         }
         
         .blog-grid {

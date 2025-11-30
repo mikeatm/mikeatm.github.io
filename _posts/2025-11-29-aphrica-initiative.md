@@ -189,4 +189,3 @@ The future of African physics is being computed right now. And we're doing the c
 **Learn more:**
 - [APhRICA Network](https://materials-modelling-group.github.io/)
 - [ICTP Physics Without Frontiers](https://www.cnr.it/en/news/13692/physics-without-frontiers-for-aphrica)
-- [Materials Modelling Group](https://materials-modelling-group.github.io/)
